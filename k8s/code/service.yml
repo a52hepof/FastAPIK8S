@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapiprecioluz-service
+  labels:
+    app: fastapi
+spec:
+  selector:
+    app: fastapi
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8081
+      nodePort: 30008
+

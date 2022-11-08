@@ -1,0 +1,33 @@
+# If a nodegroup includes the attachPolicyARNs it must also include the default node policies,
+# like AmazonEKSWorkerNodePolicy, AmazonEKS_CNI_Policy and AmazonEC2ContainerRegistryReadOnly.
+
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: fastapi-demo
+  region: ap-south-1
+  version: "1.21"
+managedNodeGroups:
+  - name: fastapi-private-ng
+    instanceType: t3a.small
+    desiredCapacity: 3
+    minSize: 3
+    maxSize: 6
+    volumeType: gp3
+    volumeSize: 20
+    privateNetworking: true
+    iam:
+      attachPolicyARNs:  # Reference : https://eksctl.io/usage/iam-policies/
+        - arn:aws:iam::XXXXXXXXXXXXXX:policy/SES_EKS_Policy # <-- this is a custom policy, you need to replace this.
+        - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
+        - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+        - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+      withAddonPolicies:
+        autoScaler: true
+        imageBuilder: true
+        albIngress: true
+        externalDNS: true
+        certManager: true
+    ssh:
+      allow: true
+      publicKeyName: "fastapi-demo" # <-- ssh key name, make sure you define the Key Pair before setting up the cluster. Reference : https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html 

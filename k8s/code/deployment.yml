@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deploy
+  labels:
+    app: fastapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi
+        image: fhp101uco/fastapiprecioluz:latest
+        ports:
+        - containerPort: 8081
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+
+
+        
