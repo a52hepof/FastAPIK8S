@@ -13,4 +13,4 @@ passlib
 PyJWT==2.0.0
 python-multipart
 gunicorn
-pydantic==1.6
+pydantic==1.7
