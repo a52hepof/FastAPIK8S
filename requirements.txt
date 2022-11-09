@@ -4,7 +4,7 @@ fastapi
 bs4
 pandas
 plotly
-#kaleido 
+#kaleido
 #psycopg2==2.9.1
 #SQLAlchemy==1.3.24
 requests==2.21.0
