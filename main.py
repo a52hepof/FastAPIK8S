@@ -248,7 +248,7 @@ async def root():
 
 
 	#return FileResponse("yourfile.png", media_type="image/jpeg", filename="vector_image_for_you.png")
-	return {"message": "Hello from jenkins  perfectly"}
+	return {"message": "Hello from jenkins perfectly well in local host"}
 
 	#fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 1])
 
