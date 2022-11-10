@@ -206,10 +206,15 @@ async def root():
 	#print(horaInstante)
 
 	for precio in precioInstante:
-		print(precio.text.replace('\n',''))
+		try:
+			print(precio.text.replace('\n',''))
+		except:
+			pass
 	for hora in horaInstante:
-		print(hora.text.split("Precio de la luz a las")[1].replace('\n',''))
-
+		try:
+			print(hora.text.split("Precio de la luz a las")[1].replace('\n',''))
+		except:
+			pass
 
 	###### Precio más alto
 	resultsPrecioMasBajo = resultsDia.find("div", class_="gauge_low")
@@ -235,7 +240,7 @@ async def root():
 		print(precio.text.replace('\n',''))
 	for hora in horaMasAlto:
 		print(hora.text)
-	#print(horaMasAl to)
+	#print(horaMasAlto)
 	#print(precioMasAlto)
 
 	obtenerDatos("02-02-2022")
