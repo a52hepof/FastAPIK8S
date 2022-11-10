@@ -235,7 +235,7 @@ async def root():
 		print(precio.text.replace('\n',''))
 	for hora in horaMasAlto:
 		print(hora.text)
-	#print(horaMasAlto)
+	#print(horaMasAl to)
 	#print(precioMasAlto)
 
 	obtenerDatos("02-02-2022")
