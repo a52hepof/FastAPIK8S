@@ -208,7 +208,7 @@ async def root():
 	for precio in precioInstante:
 		print(precio.text.replace('\n',''))
 	for hora in horaInstante:
-		print(hora.text.split("Precio a las")[1].replace('\n',''))
+		print(hora.text.split("Precio de la luz a las")[1].replace('\n',''))
 
 
 	###### Precio más alto
@@ -243,7 +243,7 @@ async def root():
 
 
 	#return FileResponse("yourfile.png", media_type="image/jpeg", filename="vector_image_for_you.png")
-	return {"message": "Hello there"}
+	return {"message": "Hello from jenkins"}
 
 	#fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 1])
 
