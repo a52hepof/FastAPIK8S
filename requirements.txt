@@ -16,3 +16,4 @@ gunicorn
 pydantic==1.7
 bcrypt
 httpx
+pytest
