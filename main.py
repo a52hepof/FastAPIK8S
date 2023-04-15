@@ -216,6 +216,7 @@ async def root():
 		except:
 			pass
 
+
 	###### Precio más alto
 	resultsPrecioMasBajo = resultsDia.find("div", class_="gauge_low")
 

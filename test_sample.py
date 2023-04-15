@@ -4,4 +4,4 @@ def incrementa(x):
 
 
 def test_answer():
-    assert incrementa(3) == 4
+    assert incrementa(3) == 5
